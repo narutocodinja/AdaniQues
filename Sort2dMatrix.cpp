@@ -47,8 +47,13 @@ int main(){
     vector<vector<int>> arr(no_rows,vector<int>(no_cols));
     arr = create_matrix(no_rows,no_cols);
 
-    cout << "Enter column index for sort (from 0) : " << endl;
+    cout << "Enter column index for sort (from 0 to Number of Columns) : " << endl;
     cin >> col_index;
+    
+    if(col_index < 0 || col_index > no_cols){
+        cout << "Invalid Index" << "\n";
+        return 0;
+    }
 
     cout << "Matrix Before Sort : " << endl;
     print_matrix(arr);
